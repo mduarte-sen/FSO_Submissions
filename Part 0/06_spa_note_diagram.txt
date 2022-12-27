@@ -1,0 +1,8 @@
+sequenceDiagram
+browser->>server: HTTP POST https://studies.cs.helsinki.fi/exampleapp/new_note_spa
+server-->>browser: HTTP Status Code 201 Created
+
+note over browser:
+the browser reflects de response message
+after the post was sent
+end note
