@@ -1,12 +1,28 @@
-const Content = parts => {
+const Header = props => {
+  return <h1>{props.course.name}</h1>;
+}
+
+const Part = props => {
+  return <p>{props.name} {props.exercises}</p>
+};
+
+const Content = props => {
   return (
     <div>
-      <Part ... />
-      <Part ... />
-      <Part ... />
+      <Part name = {props.parts[0].name} exercises = {props.parts[0].exercises} />
+      <Part name = {props.parts[1].name} exercises = {props.parts[1].exercises} />
+      <Part name = {props.parts[2].name} exercises = {props.parts[2].exercises} />
     </div>
   )
 }
+
+
+const Total = props => {
+  let total = props.parts[0].exercises + props.parts[1].exercises + props.parts[2].exercises;
+  return <p>{total} exercises in total</p>;
+}
+
+
 
 
 const App = () => {
@@ -29,26 +45,10 @@ const App = () => {
   }
 
   return (
-    // <div>
-    //   <h1>{course}</h1>
-    //   <p>
-    //     {part1} {exercises1}
-    //   </p>
-    //   <p>
-    //     {part2} {exercises2}
-    //   </p>
-    //   <p>
-    //     {part3} {exercises3}
-    //   </p>
-    //   <p>
-    //     Number of exercises {exercises1+exercises2+exercises3}
-    //   </p>
-    // </div>
-
     <div>
       <Header course={course} />
-      <Content parts = {parts} />
-      <Total parts = {parts} />
+      <Content parts = {course.parts} />
+      <Total parts = {course.parts} />
     </div>
   )
 }
