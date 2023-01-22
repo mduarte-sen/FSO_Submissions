@@ -36,8 +36,8 @@ const App = () => {
   return (
     <div>
       <h1>Anecdote of the day</h1>
-      {anecdotes[selected]}
-      <p>has {votes[selected]} votes.</p>
+      {anecdotes[selected]}<br />
+      has {votes[selected]} votes.
       <Button text={"vote"} handleClick={() => setVotes(setCurrentVote(selected))} />
       <Button text={"next anecdote"} handleClick={() => setSelected(anecdoteNum)} />
       <h1>Anecdote with most votes</h1>
